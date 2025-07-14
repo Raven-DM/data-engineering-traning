@@ -19,9 +19,9 @@ def read_csv(file,schemas):
 
 # %%
 def to_json(df, target_base_dir, table_name, file_name):
-    json_file_path = f'{target_base_dir}/{table_name}/{file_name}'
+    json_file_path = f'{target_base_dir}/{table_name}/{file_name} '
     print(f'Processing {json_file_path}')
-    os.makedirs(os.path.dirname(json_file_path), exist_ok=True)
+    os.makedirs(f'{target_base_dir}/{table_name}', exist_ok=True)
     df.to_json(json_file_path, orient='records', lines=True)    
 
 # %%
